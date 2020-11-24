@@ -4,6 +4,7 @@ metadata:
   name: bottle
   namespace: demo
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: bottle
@@ -15,6 +16,7 @@ spec:
       containers:
         - name: bottle
           image: tomowatt/python-bottle-demo:latest
+          imagePullPolicy: Always
           env:
             - name: REDIS_HOST
               value: redis-cluster-ip
