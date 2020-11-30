@@ -4,6 +4,8 @@ kind: Deployment
 metadata:
   name: bottle
   namespace: demo
+  annotations:
+    fluxcd.io/automated: 'true'
 spec:
   replicas: 1
   selector:
