@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,15 +15,15 @@ spec:
         app: bottle
     spec:
       containers:
-        - name: bottle
-          image: tomowatt/python-bottle-demo:latest
-          imagePullPolicy: Always
-          env:
-            - name: REDIS_HOST
-              value: redis-cluster-ip
-          resources:
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
-          ports:
-            - containerPort: 8080
+      - name: bottle
+        image: tomowatt/python-bottle-demo:latest
+        imagePullPolicy: Always
+        env:
+        - name: REDIS_HOST
+          value: redis-cluster-ip
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8080
