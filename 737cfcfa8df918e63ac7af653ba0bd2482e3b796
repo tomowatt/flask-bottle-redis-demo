@@ -1,0 +1,1 @@
+{"jobID":"5d7b2b9d-a229-610b-86c8-42f3ff4207e0","spec":{"type":"policy","cause":{"Message":"","User":"Tom Watt \u003ctom.watt@wearesponge.com\u003e"},"spec":{"demo:deployment/bottle":{"add":{"automated":"true"},"remove":{}}}},"result":null}
