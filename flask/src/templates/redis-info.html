@@ -1,0 +1,11 @@
+<!doctype html>
+<title>Redis Info</title>
+{% if response %}
+    <div>
+        {% for key, value in response.items() recursive %}
+        <p>{{ key }}:{{ value }}</p>
+        {% endfor %}
+    </div>
+{% else %}
+    <p> Unable to get Redis Info </p>
+{% endif %}

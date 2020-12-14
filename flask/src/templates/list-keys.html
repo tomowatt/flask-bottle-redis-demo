@@ -1,0 +1,11 @@
+<!doctype html>
+<title>List Keys</title>
+{% if response %}
+    <div>
+        {% for key in response %}
+        <p>Key: {{ key }}</p>
+        {% endfor %}
+    </div>
+{% else %}
+    <p> Unable to get Keys </p>
+{% endif %}

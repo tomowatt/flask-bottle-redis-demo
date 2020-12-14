@@ -8,8 +8,8 @@ REDIS_HOST = os.environ['REDIS_HOST']
 redis_db = redis.Redis(host=REDIS_HOST, port=6379, db=0)
 
 
-@route('/redis-check')
-def redis_check():
+@route('/redis-info')
+def redis_info():
     response.headers['Content-Type'] = 'application/json'
     response.headers['Cache-Control'] = 'no-cache'
     info = redis_db.info()
@@ -22,6 +22,8 @@ def redis_check():
 @route('/add/<key>=<value>')
 def add(key, value):
     redis_db.set(key, value)
+    response.headers['Content-Type'] = 'text/html'
+    response.headers['Cache-Control'] = 'no-cache'
     return f'Key-Value: {key}:{value} has been added.'
 
 

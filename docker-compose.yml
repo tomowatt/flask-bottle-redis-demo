@@ -1,20 +1,29 @@
 version: "3.8"
 
 services:
+  flask:
+    build: flask
+    environment:
+      - BACKEND_HOST=bottle
+      - BACKEND_PORT=8080
+    networks:
+      - frontend
+    ports:
+      - 8888:8888
+
   bottle:
-    build:
-      context: .
+    build: bottle
     environment:
       - REDIS_HOST=redis
     networks:
-      - demo
-    ports:
-      - 8080:8080
-  
+      - frontend
+      - backend
+
   redis:
     image: redis:6.0.9-alpine
     networks:
-      - demo
+      - backend
 
 networks:
-  demo:
+  frontend:
+  backend:

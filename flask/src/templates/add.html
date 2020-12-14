@@ -1,0 +1,15 @@
+<!doctype html>
+<title>Add Key-Value</title>
+<html>
+
+<body>
+    <form method="POST" action="/add">
+        <input type="submit" value="Pair1" name="Pair1" />
+        <input type="submit" value="Pair2" name="Pair2" />
+    </form>
+    {% if response %}
+        <p>{{ response }}}</p>
+    {% endif %}
+</body>
+
+</html>

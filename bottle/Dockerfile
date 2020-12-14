@@ -10,4 +10,4 @@ COPY /src/ .
 EXPOSE 8080
 
 ENTRYPOINT [ "gunicorn" ]
-CMD [ "demo:app", "--bind=0.0.0.0:8080" ]
+CMD [ "api:app", "--bind=0.0.0.0:8080" ]
