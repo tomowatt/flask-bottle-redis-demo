@@ -1,5 +1,5 @@
 <!doctype html>
-<title>List Key Values</title>
+<title>List Key-Values</title>
 {% if response %}
     <div>
         {% for key, value in response.items() recursive %}
@@ -7,5 +7,5 @@
         {% endfor %}
     </div>
 {% else %}
-    <p> Unable to get Redis Info </p>
+    <p> Unable to List Key-Values </p>
 {% endif %}
