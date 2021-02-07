@@ -47,7 +47,7 @@ def list_keys():
 @route('/list/key-values')
 def list_key_values():
     redis_keys = [key.decode('utf-8') for key in redis_db.keys('*')]
-    key_values = dict()
+    key_values = {}
     for key in redis_keys:
         value = redis_db.get(key)
         key_values[key] = value.decode('utf-8')
